@@ -14,7 +14,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HeroService {
 
-  private heroesUrl = 'api/heroesx';  // URL to web api
+  private heroesUrl = 'api/heroes';  // URL to web api
 
   constructor(private messageService: MessageService,
               private http: HttpClient) {
