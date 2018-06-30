@@ -24,6 +24,7 @@ export class HeroService {
   getHeroes(): Observable<Hero[]> {  // Async Way, with subscribe Observer later!
     return this.http.get<Hero[]>(this.heroesUrl) // of(HEROES), returns Observable<Hero[]>
       .pipe(
+        tap(heroes => this.log(`fetched heroes`)),
         catchError(this.handleError('getHeroes', []))
       );
   }
@@ -50,6 +51,6 @@ export class HeroService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    this.messageService.add('HeroService: ' + message);
+    this.messageService.add('HeroService Tap: ' + message);
   }
 }
