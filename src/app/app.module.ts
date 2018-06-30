@@ -14,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 // When the Server is ready, detach the in-memory WEB API!
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';  // reads data from this service, mock-heroes will be deactivated!
+import { InMemoryDataService } from './in-memory-data.service';
+import { HeroSearchComponent } from './hero-search/hero-search.component';  // reads data from this service, mock-heroes will be deactivated!
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InMemoryDataService } from './in-memory-data.service';  // reads data f
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
