@@ -20,7 +20,8 @@ export class HeroesComponent implements OnInit {
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
-  getHeroes() {
-   this.heroes = this.heroService.getHeroes();  // Fix Tutorial Fehler!
+  getHeroes(): void {
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);  // async subscribe, like callback, from observable..
   }
 }
